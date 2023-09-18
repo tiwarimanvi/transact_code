@@ -1,4 +1,3 @@
-// TODO 6 - Call buy_ticket entrypoint in the Lottery contract by completing buyTicketOperation
 import { tezos } from "./tezos"
 
 export const addUserOperation = async (ImgHash: String) => {
@@ -12,8 +11,4 @@ export const addUserOperation = async (ImgHash: String) => {
     }
 };
 
-// TODO 10 - Call end_game entrypoint in the Lottery contract by completing endGameOperation
 
-// export const endGameOperation = async () => {
-   
-// };

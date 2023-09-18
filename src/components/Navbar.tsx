@@ -6,7 +6,6 @@ const Navbar: React.FC = () => {
   const [account, setAccount] = useState<string>("");
   const [active,setActive] = useState(false);
 
-  // TODO 4.a - Complete onConnectWallet function
   const onConnectWallet = async () => {
     await connectWallet();
     const account = await getAccount();
@@ -38,7 +37,7 @@ const Navbar: React.FC = () => {
             <span>AboutUs</span>
             <span><button
           onClick={onConnectWallet}
-          className="button px-6 py-2 rounded-sm text-xs font-semibold text-white cursor-pointer"
+          className={active ? "button text-black" : "button px-6 py-2 rounded-sm text-xs font-semibold text-white cursor-pointer"}
         >
           💳{" "}
           {account
@@ -47,10 +46,10 @@ const Navbar: React.FC = () => {
               account.slice(account.length - 4, account.length)
             : "Connect"}
           </button></span>
-            <button className="button">Sell</button>
+          {account ?  <button className={active ? "button text-black" : "button"}>Sell</button> : ""}
         </div>
     </div>
-    {active && (
+    {/* {active && (
       <>
        <hr className="w-full h-0 border-1/2 solid border-gray-500"></hr>
     <div className='menu'>
@@ -59,7 +58,7 @@ const Navbar: React.FC = () => {
     </div>
       </>
 
-    )}
+    )} */}
    
  
     
@@ -67,15 +66,3 @@ const Navbar: React.FC = () => {
   );
 }
 export default Navbar
-
-{/* <button
-          onClick={wallet ? handleDisconnectWallet : handleConnectWallet}
-          className="bg-green-500 px-6 py-2 rounded-sm text-xs font-semibold text-white cursor-pointer"
-        >
-          💳{" "}
-          {wallet
-            ? wallet.slice(0, 4) +
-              "..." +
-              wallet.slice(wallet.length - 4, wallet.length)
-            : "Connect"}
-          </button> */}

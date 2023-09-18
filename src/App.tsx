@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { getAccount } from "./utils/wallet";
-
-// Components
+import React from "react";
 import Navbar from "./components/Navbar";
-import FileUpload from "./components/FileUpload";
+import Home from "./components/Homepage";
 
 const App: React.FC = () => {
   
   return (
-    <div className="h-100">
+    <div className="">
       <Navbar />
-      <FileUpload />
+      <Home />
     </div>
   );
 };
