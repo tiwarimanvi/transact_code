@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Homepage";
+import ProjectUploadForm from "./components/ProjectUploadForm";
 
 const App: React.FC = () => {
   
   return (
     <div className="">
-      <Navbar />
-      <Home />
+      <ProjectUploadForm></ProjectUploadForm>
+      {/* <Navbar />
+      <Home /> */}
     </div>
   );
 };
