@@ -1,5 +1,6 @@
 import React from 'react';
 import project_card from "../data/HomeData";
+import "../css/homepage.css"
 import {
     Card,
     CardBody,
@@ -10,15 +11,12 @@ import {
 
 function Home() {
     let projectdata = project_card.map((p) => (
-        <div className='' key={p.id}>
+        <div className='card' key={p.id}>
             <Card>
-                <div>
-                    <img className='' src={p.thumb} alt={p.project_name} />
-                </div>
-                
-                <CardBody>
+                <img className='w-70' src={p.thumb} alt={p.project_name} />
+                <CardBody className='card-body'>
                     <div>
-                        <div>
+                        <div className='card-body-pname'>
                             <Typography>
                                 {p.project_name}
                             </Typography>
@@ -30,8 +28,11 @@ function Home() {
                         </div>
                     </div>
                 </CardBody>
-                <CardFooter>
+                <CardFooter className='card-footer'>
                     <div>
+                        <span>
+                            Price in XTZ(ꜩ)
+                        </span>
                         <Button> {p.price}</Button>
                     </div>
                 </CardFooter>
@@ -40,7 +41,7 @@ function Home() {
     ));
 
     return (
-        <div className="px-4">
+        <div className="home">
             {projectdata}
         </div>
     );
