@@ -7,9 +7,9 @@ const App: React.FC = () => {
   
   return (
     <div className="">
-      <ProjectUploadForm></ProjectUploadForm>
-      {/* <Navbar />
-      <Home /> */}
+      {/* <ProjectUploadForm></ProjectUploadForm> */}
+      <Navbar />
+      <Home />
     </div>
   );
 };
