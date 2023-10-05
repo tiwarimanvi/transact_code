@@ -58,7 +58,7 @@ ROOT_URLCONF = 'TransactCode.urls'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
        'http://localhost:4200',
 )
@@ -68,9 +68,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
-
+STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = 'E:/Projects/Django/TransactCode/TransactCode/media/'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
