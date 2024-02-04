@@ -59,8 +59,8 @@ import {
 } from "@material-tailwind/react";
 import "../css/homepage.css";
 
-class Home extends Component {
-    constructor(props) {
+class Home extends Component <{}, { projects: any[] }> {
+    constructor(props: {}) {
         super(props);
         this.state = {
             projects: [],
@@ -85,7 +85,7 @@ class Home extends Component {
             <div className='card' key={project.id}>
                 <Card>
                 console.log({project.project_images})
-                    <img className='w-70' src={project.project_images} alt={project.project_name} />
+                    <img className='w-94' src={`http://127.0.0.1:8000/TC${project.project_images}`} alt={project.project_name} />
                     <CardBody className='card-body'>
                         <div>
                             <div className='card-body-pname'>
