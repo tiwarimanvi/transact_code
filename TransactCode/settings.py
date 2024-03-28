@@ -60,7 +60,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
-       'http://localhost:4200',
+       # 'http://localhost:8000',
+        'http://localhost:5173',
 )
 
 REST_FRAMEWORK = {
@@ -68,11 +69,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
-STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_IMAGE_BACKEND = "pillow"
-# MEDIA_URL = '/media/'
 # MEDIA_ROOT = 'E:/Projects/Django/TransactCode/TransactCode/media/'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'

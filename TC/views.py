@@ -14,7 +14,16 @@ class ProjectUploadAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, *args, **kwargs):
-        product = Project.objects.all()
-        serializer = ProjectSerializer(product, many=True)
-        # print(product.project_images)
-        return Response(serializer.data)
+        key = kwargs['pk']
+        column_name_values = Project.objects.values_list('id', flat=True)
+
+        # Convert the queryset to a list
+        column_name_list = list(column_name_values)
+        if key in column_name_list:
+            product = Project.objects.get(id=key)
+            serializer = ProjectSerializer(product)
+            return Response(serializer.data)
+        else:
+            product = Project.objects.all().order_by('-id')
+            serializer = ProjectSerializer(product, many=True)
+            return Response(serializer.data)
