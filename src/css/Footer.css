@@ -1,0 +1,54 @@
+/* Footer.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Align items at the start, middle, and end */
+    align-items: center;
+  }
+  
+  .footer-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    order: 1; /* Set the order to 1 to place it at the start */
+  }
+  
+  .text {
+    color: #fff;
+  }
+  
+  .dot {
+    color: #ff5733;
+    font-size: 36px;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+  
+  .footer-copyright {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    order: 2; /* Set the order to 2 to place it in the middle */
+  }
+  
+  .footer-handles {
+    display: flex;
+    justify-content: center;
+    order: 3; /* Set the order to 3 to place it at the end */
+  }
+  
+  .footer-handles a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .footer-handles a:hover {
+    color: #ff5733;
+  }
+  

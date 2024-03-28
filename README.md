@@ -47,3 +47,4 @@ Clicking on a project card/grid on the home page opens a detailed view, includin
 
 - **Multiple Sales:** Projects can be sold multiple times.
 - **Sorting:** Newer projects appear at the top of the home page, while older ones move to the bottom.
+
