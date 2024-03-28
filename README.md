@@ -1,93 +1,50 @@
-# Taquito React template
+# Transact Code Project
 
-![Built with Taquito][logo]
+## Overview
 
-A minimal React setup for starting developing Tezos DApps quickly with Taquito.
+Transact Code is a blockchain-based platform that allows users to buy and sell software projects securely. The project utilizes a combination of SmartPy (blockchain), React.js (frontend), and Django (backend) technologies to create a seamless experience for users.
 
-## Getting Started
+## Project Flow
 
-1. Make sure you have https://nodejs.org/ installed on your computer
-2. Create a new repository from taquito-boilerplate by clicking "Use this template".
-3. Clone your new repository:
+### Home Page
 
-   `git clone <YOUR_REPOSITORY_URL>`
+The home page serves as the main entry point for users. It features a grid layout displaying projects available for sale, each represented by images provided by the sellers. The following elements are present on the home page:
 
-4. Change your current working directory to the newly cloned repository directory.
-5. Install dependencies:
+- **Grid of Projects:** Displaying images, project names, and prices.
+- **Login Button:** Allows users to log in using their Temple Wallet account.
 
-   `npm install`
+### User Authentication
 
-6. Start development server:
+- **Login:** Users can log in using their Temple Wallet account.
+- **Seller Form:** After logging in, sellers can fill out a form with details such as name, email, project name, project images, GitHub link, and the project's compressed file.
+- **Profile Creation:** Seller profiles are created with basic details and a list of uploaded projects.
 
-   `npm run dev`
+### Profile Section
 
-7. Open http://localhost:5173/ in your browser to see a sample application.
+The profile section provides an overview of the user's account:
 
-## Building the App
+- **Basic Details:** User information.
+- **Uploaded Projects:** List of projects uploaded for selling.
+- **Sold Projects:** Information on projects that have been sold.
+- **Total Income:** Sum of income generated from sales.
 
-1. Run the command:
+### Project Details Page
 
-   `npm run build`
+Clicking on a project card/grid on the home page opens a detailed view, including:
 
-2. After you have build the app you can run it locally:
+- **Project Images:** Slideshow of project images.
+- **Project Name, Description, and Price:** Key details about the project.
+- **Buy Now Option:** Allows buyers to initiate the purchase process.
 
-   `npm run preview`
+### IPFS Integration with Pinata
 
-3. Open http://localhost:4173/ in your browser to see the production build. 
+- **Compressed File Submission:** Sellers submit project compressed files.
+- **IPFS Storage:** Files are stored on IPFS using Pinata.
+- **Link Generation:** Sellers receive a link in return.
+- **Purchase Process:** Buyers provide the required Tez and receive a link to access the purchased project.
 
-   For more information read the [Vite Guide](https://vitejs.dev/guide/static-deploy.html)
+### Project Selling
 
-[logo]: https://raw.githubusercontent.com/ecadlabs/taquito-boilerplate/master/assets/built-with-taquito.png "Built with Taquito"
+- **Multiple Sales:** Projects can be sold multiple times.
+- **Sorting:** Newer projects appear at the top of the home page, while older ones move to the bottom.
 
-> ## Polyfill
->
-> Before we start we need to add the following dependencies in order to not get polyfill issues. The reason for this step is that certain required dependencies are Node APIs, thus not included in Browsers. But still needed for communication and interaction with Wallets and Smart Contracts.
-> For a better understanding here are the steps described. 
->
-> You do not need to do the steps as it is already configured.
->
-> Run `npm install buffer stream-browserify util events process`
->
-> Then create a new file `nodeSpecific.ts` in the src folder of the project and add:
-> ```js
-> import { Buffer } from 'buffer'
->
-> globalThis.Buffer = Buffer
-> ```
->
-> Then open the `index.html` file and add the following script in the body. 
-> It should look like this:
->
-> ```js
-> <body>
->   <div id="root"></div>
->    <script type="module" src="/src/nodeSpecific.ts"></script> //add this line
->    <script type="module" src="/src/main.tsx"></script>
-> </body>
-> ```
->
-> Finally open the `vite.config.ts` file and add the `resolve` part:
->
-> ```js
-> import { defineConfig } from 'vite'
-> import react from '@vitejs/plugin-react-swc'
-> 
-> // https://vitejs.dev/config/
-> export default defineConfig({
->   define: {
->     global: {},
->   },
->   plugins: [react()],
->   resolve: {
->     alias: {
->       stream: 'stream-browserify',
->       os: 'os-browserify/browser',
->       util: 'util',
->       process: 'process/browser',
->       buffer: 'buffer',
->     },
->   },
-> })
-> ```
->
-> Now we can run the app. 
